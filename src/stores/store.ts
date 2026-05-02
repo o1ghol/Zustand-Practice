@@ -16,8 +16,7 @@ export const useStore = create<State & Action>()(
     immer((set) => ({
       //初期値
       bears: 0,
-    //stateの更新
-    increaseBear: (by) => set((state) => ({ bears: state.bears + by }), false, 'increaseBear'),
+      increaseBear: (by) => set((state) => {state.bears += by}, false, 'increaseBear'),
     })),
-  ),  
+  ),
 );
